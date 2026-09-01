@@ -6,9 +6,20 @@ A responsive homepage redesign concept for RMA Worldwide Chauffeured Transportat
 
 - Make booking the primary user journey
 - Present RMA as a polished global transportation brand
-- Clarify services and fleet options
+- Use a Washington, D.C.-rooted rotating hero with fleet and electric-travel stories
+- Clarify corporate, personal, event, shuttle, and global services
+- Let visitors compare core fleet categories interactively
 - Build trust through scale, support, and service standards
 - Create a fast, responsive experience for desktop and mobile
+
+## Interactions
+
+- Automatic and manual hero slideshow
+- Subtle scroll-linked hero movement
+- Interactive fleet selector
+- Responsive mobile navigation
+- Scroll-reveal transitions with reduced-motion support
+- Demonstration contact form state
 
 ## Run locally
 
