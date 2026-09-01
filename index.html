@@ -52,19 +52,44 @@
       </div>
     </section>
 
-    <section class="booking-wrap" id="reserve">
-      <form class="booking-card" id="booking-form">
-        <div class="booking-heading">
-          <span class="booking-icon">↗</span>
-          <div><p>Plan your journey</p><h2>Where can we take you?</h2></div>
+    <section class="contact-panel" id="reserve">
+      <div class="contact-panel-overlay"></div>
+      <div class="contact-intro reveal">
+        <p class="contact-kicker">Serving</p>
+        <h2><span>Every city.</span><strong>Everywhere.</strong></h2>
+        <div class="contact-intro-bottom">
+          <a class="button contact-login" href="#">Login</a>
+          <div class="call-block">
+            <span>Or give us a call:</span>
+            <a href="tel:8888885466">888-888-LIMO</a>
+            <a href="tel:3016547433">301-654-RIDE</a>
+          </div>
         </div>
-        <label><span>Pickup</span><input type="text" placeholder="Airport, address, or hotel" required></label>
-        <label><span>Destination</span><input type="text" placeholder="Where are you headed?" required></label>
-        <label><span>Date</span><input type="date" required></label>
-        <label><span>Time</span><input type="time" required></label>
-        <button class="button booking-submit" type="submit">View availability <span>→</span></button>
+      </div>
+
+      <form class="contact-form reveal" id="booking-form">
+        <h2>Send us a message!</h2>
+        <div class="contact-fields two-columns">
+          <label><span>First name</span><input type="text" name="first_name" required></label>
+          <label><span>Last name</span><input type="text" name="last_name" required></label>
+          <label><span>Email</span><input type="email" name="email" required></label>
+          <label><span>Phone</span><input type="tel" name="phone"></label>
+        </div>
+        <label class="select-field"><span>State</span><select name="state" required><option value="">Select your state</option><option>Maryland</option><option>Virginia</option><option>Washington, D.C.</option><option>New York</option><option>Other</option></select></label>
+        <label class="select-field"><span>Travel frequency</span><select name="frequency"><option value="">How often do you need chauffeured transportation?</option><option>Once</option><option>A few times a year</option><option>Monthly</option><option>Weekly</option></select></label>
+        <fieldset class="request-options">
+          <legend>How can we help?</legend>
+          <label><input type="checkbox" name="request" value="reservation"><span>Make a reservation</span></label>
+          <label><input type="checkbox" name="request" value="estimate"><span>Request an estimate</span></label>
+          <label><input type="checkbox" name="request" value="event"><span>Book an event</span></label>
+          <label><input type="checkbox" name="request" value="wedding"><span>Book a wedding</span></label>
+          <label><input type="checkbox" name="request" value="corporate"><span>Open a corporate account</span></label>
+          <label><input type="checkbox" name="request" value="affiliate"><span>Join the affiliate network</span></label>
+        </fieldset>
+        <label class="message-field"><span>Message</span><textarea name="message" rows="4" required></textarea></label>
+        <button class="button contact-submit" type="submit">Send message</button>
+        <p class="booking-note" id="booking-note" role="status"></p>
       </form>
-      <p class="booking-note" id="booking-note" role="status"></p>
     </section>
 
     <section class="section services" id="services">
