@@ -96,7 +96,7 @@ if (!reduceMotion.matches && hero) {
     });
 
     if (activeImage) {
-      activeImage.style.transform = `translate3d(0, ${offset}px, 0) scale(1.06)`;
+      activeImage.style.transform = `translate3d(0, ${offset}px, 0) scale(1.025)`;
     }
 
     parallaxFrame = null;
@@ -138,8 +138,8 @@ const fleetData = {
     passengers: 'Up to 56 passengers',
     use: 'Conferences & large-group travel',
     feature: 'High-capacity, planned, dependable',
-    image: 'assets/hero-groups.webp',
-    alt: 'Motor coach staged near the Washington Monument'
+    image: 'assets/fleet-coach.webp',
+    alt: 'Full-size black motor coach in Washington, D.C.'
   }
 };
 
