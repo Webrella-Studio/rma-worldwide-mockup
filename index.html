@@ -15,6 +15,14 @@
     .utility-track { width: 100%; justify-content: center; animation: none; }
     .utility-links { padding-right: 0; justify-content: center; }
     .utility-links[aria-hidden="true"] { display: none; }
+    .hero-video { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+    .hero .hero-image { opacity: 0; }
+    .hero.video-fallback .hero-video { display: none; }
+    .hero.video-fallback .hero-image { opacity: 1; }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-video { display: none; }
+      .hero .hero-image { opacity: 1; }
+    }
   </style>
 </head>
 <body>
@@ -35,6 +43,9 @@
 
   <main>
     <section class="hero" aria-label="Featured RMA services">
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/hero-capitol.webp" aria-hidden="true" onerror="this.closest('.hero').classList.add('video-fallback')">
+        <source src="assets/rma-hero-background.mp4" type="video/mp4">
+      </video>
       <div class="hero-slide active" data-slide="0">
         <img class="hero-image parallax-image" src="assets/hero-capitol.webp" alt="Black luxury SUV and chauffeur near the United States Capitol"><div class="hero-shade"></div>
         <div class="hero-content"><p class="eyebrow">Washington roots. Worldwide reach.</p><h1>Worldwide chauffeured<br><em>transportation.</em></h1><p>Premium transportation for airport transfers, business travel, special events, and coordinated group movement.</p><div class="hero-actions"><a class="button" href="#contact">Book your next trip</a><a class="text-cta" href="#services">Explore services <span>→</span></a></div></div>
