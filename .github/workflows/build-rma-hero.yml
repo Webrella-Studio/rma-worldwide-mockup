@@ -36,19 +36,20 @@ jobs:
             -loop 1 -t 4 -i assets/hero-electric.webp \
             -loop 1 -t 4 -i assets/hero-capitol.webp \
             -filter_complex "\
-          [0:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,zoompan=z='min(zoom+0.00035,1.035)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=96:s=1920x1080:fps=24,format=yuv420p[v0];\
-          [1:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,zoompan=z='min(zoom+0.00030,1.03)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=96:s=1920x1080:fps=24,format=yuv420p[v1];\
-          [2:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,zoompan=z='min(zoom+0.00035,1.035)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=96:s=1920x1080:fps=24,format=yuv420p[v2];\
-          [3:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,zoompan=z='min(zoom+0.00030,1.03)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=96:s=1920x1080:fps=24,format=yuv420p[v3];\
-          [4:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,zoompan=z='min(zoom+0.00035,1.035)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=96:s=1920x1080:fps=24,format=yuv420p[v4];\
+          [0:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,setsar=1,fps=24,format=yuv420p[v0];\
+          [1:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,setsar=1,fps=24,format=yuv420p[v1];\
+          [2:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,setsar=1,fps=24,format=yuv420p[v2];\
+          [3:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,setsar=1,fps=24,format=yuv420p[v3];\
+          [4:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,setsar=1,fps=24,format=yuv420p[v4];\
           [v0][v1]xfade=transition=fade:duration=0.75:offset=3.25[v01];\
           [v01][v2]xfade=transition=fade:duration=0.75:offset=6.5[v02];\
           [v02][v3]xfade=transition=fade:duration=0.75:offset=9.75[v03];\
           [v03][v4]xfade=transition=fade:duration=0.75:offset=13.0,format=yuv420p[v]" \
             -map '[v]' \
             -an \
+            -t 17 \
             -c:v libx264 \
-            -preset medium \
+            -preset veryfast \
             -crf 18 \
             -profile:v high \
             -level 4.1 \
