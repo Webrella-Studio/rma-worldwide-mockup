@@ -1,0 +1,40 @@
+name: Wire second-pass showcase
+
+on:
+  push:
+    paths:
+      - '.github/workflows/wire-showcase.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  wire:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add showcase script to homepage
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          text = p.read_text()
+          old = '  <script src="script.js"></script>\n'
+          new = '  <script src="script.js"></script>\n  <script src="showcase.js?v=20260901b"></script>\n'
+          if 'showcase.js?v=20260901b' not in text:
+              if old not in text:
+                  raise SystemExit('Could not find core script tag')
+              text = text.replace(old, new)
+              p.write_text(text)
+          PY
+      - name: Commit homepage wiring
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          if git diff --cached --quiet; then
+            echo 'Showcase already wired.'
+            exit 0
+          fi
+          git commit -m 'Load second-pass Webrella showcase'
+          git push
