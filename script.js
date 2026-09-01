@@ -32,7 +32,7 @@ document.querySelectorAll('.fleet-tab').forEach(tab => {
 
 document.getElementById('booking-form').addEventListener('submit', event => {
   event.preventDefault();
-  document.getElementById('booking-note').textContent = 'Concept interaction: a live site would continue to rates and vehicle selection.';
+  document.getElementById('booking-note').textContent = 'Concept interaction: a live site would securely send this inquiry to the RMA team.';
 });
 
 const revealObserver = new IntersectionObserver(entries => {
