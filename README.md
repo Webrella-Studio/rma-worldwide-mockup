@@ -22,4 +22,4 @@ Then visit `http://localhost:8080`.
 
 ## Note
 
-This is an independent design concept for presentation purposes. The hero artwork is original and contains no third-party branding.
+This is an independent design concept for presentation purposes. The hero artwork is original. The RMA logo is used to demonstrate the concept in the company's established visual identity.
