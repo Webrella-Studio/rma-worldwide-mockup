@@ -1,0 +1,71 @@
+name: Build high-quality RMA hero video
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/build-rma-hero.yml'
+      - 'assets/hero-capitol.webp'
+      - 'assets/hero-transport.webp'
+      - 'assets/hero-groups.webp'
+      - 'assets/hero-electric.webp'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-video:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Confirm ffmpeg
+        run: ffmpeg -version
+
+      - name: Render 1080p cinematic hero video
+        run: |
+          ffmpeg -y \
+            -loop 1 -t 4 -i assets/hero-capitol.webp \
+            -loop 1 -t 4 -i assets/hero-transport.webp \
+            -loop 1 -t 4 -i assets/hero-groups.webp \
+            -loop 1 -t 4 -i assets/hero-electric.webp \
+            -loop 1 -t 4 -i assets/hero-capitol.webp \
+            -filter_complex "\
+          [0:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,zoompan=z='min(zoom+0.00035,1.035)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=96:s=1920x1080:fps=24,format=yuv420p[v0];\
+          [1:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,zoompan=z='min(zoom+0.00030,1.03)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=96:s=1920x1080:fps=24,format=yuv420p[v1];\
+          [2:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,zoompan=z='min(zoom+0.00035,1.035)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=96:s=1920x1080:fps=24,format=yuv420p[v2];\
+          [3:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,zoompan=z='min(zoom+0.00030,1.03)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=96:s=1920x1080:fps=24,format=yuv420p[v3];\
+          [4:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,zoompan=z='min(zoom+0.00035,1.035)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=96:s=1920x1080:fps=24,format=yuv420p[v4];\
+          [v0][v1]xfade=transition=fade:duration=0.75:offset=3.25[v01];\
+          [v01][v2]xfade=transition=fade:duration=0.75:offset=6.5[v02];\
+          [v02][v3]xfade=transition=fade:duration=0.75:offset=9.75[v03];\
+          [v03][v4]xfade=transition=fade:duration=0.75:offset=13.0,format=yuv420p[v]" \
+            -map '[v]' \
+            -an \
+            -c:v libx264 \
+            -preset medium \
+            -crf 18 \
+            -profile:v high \
+            -level 4.1 \
+            -pix_fmt yuv420p \
+            -movflags +faststart \
+            assets/rma-hero-background.mp4
+
+      - name: Verify output
+        run: |
+          ls -lh assets/rma-hero-background.mp4
+          ffprobe -v error -show_entries stream=width,height -show_entries format=duration -of default=noprint_wrappers=1 assets/rma-hero-background.mp4
+
+      - name: Commit rendered video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/rma-hero-background.mp4
+          if git diff --cached --quiet; then
+            echo 'Video is already current.'
+            exit 0
+          fi
+          git commit -m 'Render high-quality 1080p RMA hero video'
+          git push
