@@ -3,189 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Concept website for RMA Worldwide Chauffeured Transportation, created by Webrella Studio.">
+  <meta name="description" content="A Webrella Studio concept for RMA Worldwide Chauffeured Transportation.">
   <title>RMA Worldwide | Chauffeured Transportation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="concept-bar">Concept website created by Webrella Studio</div>
-
+  <div class="concept-bar"><span>Concept website by Webrella Studio</span><span>RMA Worldwide redesign proposal</span></div>
   <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="RMA Worldwide home">
-      <img class="official-logo" src="assets/rma-logo.png" alt="RMA Worldwide">
-    </a>
-    <nav class="desktop-nav" aria-label="Main navigation">
-      <a href="#services">Services</a>
-      <a href="#fleet">Fleet</a>
-      <a href="#difference">Why RMA</a>
-      <a href="#locations">Locations</a>
-    </nav>
-    <div class="header-actions">
-      <a class="text-link" href="tel:8888885466">(888) 888-LIMO</a>
-      <a class="button button-small" href="#reserve">Book a ride</a>
-      <button class="menu-button" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span>
-      </button>
-    </div>
+    <a class="brand" href="#top" aria-label="RMA Worldwide home"><img class="official-logo" src="assets/rma-logo.png" alt="RMA Worldwide"></a>
+    <nav class="desktop-nav" aria-label="Main navigation"><a href="#services">Services</a><a href="#fleet">Fleet</a><a href="#difference">Why RMA</a><a href="#locations">Locations</a></nav>
+    <div class="header-actions"><a class="phone-link" href="tel:8888885466">(888) 888-LIMO</a><a class="button button-outline-red" href="#contact">Book a ride</a><button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button></div>
   </header>
 
   <main>
-    <section class="hero">
-      <img class="hero-image" src="assets/hero-transport.webp" alt="A professional chauffeur beside a premium black sedan at an airport terminal">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <p class="eyebrow">Every city. Every occasion.</p>
-        <h1>Elevated travel,<br><em>wherever you go.</em></h1>
-        <p class="hero-intro">Chauffeured transportation built around your schedule, your comfort, and one uncompromising standard of service.</p>
-        <div class="hero-actions">
-          <a class="button" href="#reserve">Reserve your ride</a>
-          <a class="play-link" href="#difference"><span class="play">→</span> Discover the RMA difference</a>
-        </div>
+    <section class="hero" aria-label="Featured RMA services">
+      <div class="hero-slide active" data-slide="0">
+        <img class="hero-image parallax-image" src="assets/hero-capitol.webp" alt="Black luxury SUV and chauffeur near the United States Capitol"><div class="hero-shade"></div>
+        <div class="hero-content"><p class="eyebrow">Washington roots. Worldwide reach.</p><h1>Worldwide chauffeured<br><em>transportation.</em></h1><p>Premium transportation for airport transfers, business travel, special events, and coordinated group movement.</p><div class="hero-actions"><a class="button" href="#contact">Book your next trip</a><a class="text-cta" href="#services">Explore services <span>→</span></a></div></div>
       </div>
-      <div class="hero-proof" aria-label="RMA service highlights">
-        <div><strong>650+</strong><span>Cities served</span></div>
-        <div><strong>24/7</strong><span>Global support</span></div>
-        <div><strong>1988</strong><span>Founded</span></div>
+      <div class="hero-slide" data-slide="1">
+        <img class="hero-image parallax-image" src="assets/hero-groups.webp" alt="Executive van and motor coach near the Washington Monument"><div class="hero-shade"></div>
+        <div class="hero-content"><p class="eyebrow">From one traveler to an entire team</p><h1>Group travel,<br><em>orchestrated.</em></h1><p>Executive vans, minibuses, and motor coaches coordinated with one consistent standard from pickup to arrival.</p><div class="hero-actions"><a class="button" href="#fleet">Explore the fleet</a><a class="text-cta" href="#services">Group solutions <span>→</span></a></div></div>
+      </div>
+      <div class="hero-slide" data-slide="2">
+        <img class="hero-image parallax-image" src="assets/hero-electric.webp" alt="All-electric black luxury sedan in Washington, D.C."><div class="hero-shade"></div>
+        <div class="hero-content electric-copy"><p class="eyebrow">The future joins the fleet</p><h1>All-electric vehicles are here<br><em>for a smarter way to travel.</em></h1><p>A quieter, modern ride that brings together innovation, comfort, and responsible luxury.</p><div class="hero-actions"><a class="button" href="#fleet">Discover electric travel</a><a class="text-cta" href="#difference">Why RMA <span>→</span></a></div></div>
+      </div>
+      <div class="slider-controls"><button class="slider-arrow previous" type="button" aria-label="Previous slide">←</button><div class="slider-dots" role="tablist" aria-label="Select hero slide"><button class="slider-dot active" type="button" data-target="0" aria-label="Capitol transportation slide" aria-selected="true"></button><button class="slider-dot" type="button" data-target="1" aria-label="Group transportation slide" aria-selected="false"></button><button class="slider-dot" type="button" data-target="2" aria-label="Electric vehicle slide" aria-selected="false"></button></div><button class="slider-arrow next" type="button" aria-label="Next slide">→</button></div>
+      <div class="hero-stats" aria-label="RMA service highlights"><div><strong>650+</strong><span>Cities served</span></div><div><strong>24/7</strong><span>Travel support</span></div><div><strong>1988</strong><span>Founded</span></div></div>
+    </section>
+
+    <section class="service-section" id="services">
+      <div class="section-intro reveal"><p class="eyebrow dark">Our services</p><h2>Every occasion.<br>One dependable partner.</h2><p>RMA supports individual journeys, complex events, and ongoing transportation programs with service designed around the traveler.</p></div>
+      <div class="service-showcase">
+        <a class="service-tile service-all reveal" href="#contact"><span class="service-icon">↗</span><h3>View all<br>services</h3><p>Find the right solution for your itinerary.</p></a>
+        <a class="service-tile service-photo reveal" href="#contact"><img src="assets/service-corporate.webp" alt="Business travelers boarding an executive van"><span class="tile-shade"></span><div><small>01</small><h3>Corporate</h3><p>Executive travel, airport transfers, road shows, and team movement.</p><span class="tile-link">Explore corporate →</span></div></a>
+        <a class="service-tile service-photo reveal" href="#contact"><img src="assets/service-personal.webp" alt="A couple approaching a chauffeured luxury sedan"><span class="tile-shade"></span><div><small>02</small><h3>Personal</h3><p>Special occasions and personal journeys handled with thoughtful care.</p><span class="tile-link">Explore personal →</span></div></a>
+        <a class="service-tile service-photo reveal" href="#contact"><img src="assets/hero-transport.webp" alt="Professional chauffeur beside a luxury sedan"><span class="tile-shade"></span><div><small>03</small><h3>Meetings & events</h3><p>Coordinated transportation that keeps guests and schedules moving.</p><span class="tile-link">Plan an event →</span></div></a>
+        <a class="service-tile service-photo reveal" href="#contact"><img src="assets/hero-groups.webp" alt="Executive van and motor coach in Washington, D.C."><span class="tile-shade"></span><div><small>04</small><h3>Shuttles & contracts</h3><p>Reliable recurring service for companies, campuses, and large groups.</p><span class="tile-link">Explore shuttles →</span></div></a>
+        <a class="service-tile service-photo reveal" href="#locations"><img src="assets/hero-capitol.webp" alt="Luxury ground transportation in Washington, D.C."><span class="tile-shade"></span><div><small>05</small><h3>Global transportation</h3><p>One point of contact for premium travel across major markets.</p><span class="tile-link">View global reach →</span></div></a>
       </div>
     </section>
 
-    <section class="contact-panel" id="reserve">
+    <section class="ride-counts" id="difference">
+      <div class="ride-image reveal"><img src="assets/service-corporate.webp" alt="Professional chauffeur greeting business travelers"></div>
+      <div class="ride-copy reveal"><p class="eyebrow dark">About RMA</p><h2>Every ride counts.</h2><p>From a one-car beginning in the Washington region to a worldwide transportation network, the promise stays simple: treat every traveler, every schedule, and every detail like it matters.</p><div class="promise-grid"><div><strong>Always ready</strong><span>Round-the-clock operations support</span></div><div><strong>Professionally driven</strong><span>Trained chauffeurs and consistent care</span></div><div><strong>Built to scale</strong><span>From private cars to full motor coaches</span></div><div><strong>Globally connected</strong><span>Local service across major markets</span></div></div><a class="button" href="#contact">Experience the difference</a></div>
+    </section>
+
+    <section class="fleet-section" id="fleet">
+      <div class="fleet-copy reveal"><p class="eyebrow">A vehicle for every itinerary</p><h2>Meet the fleet.</h2><p>Choose the right balance of capacity, comfort, and presentation for a solo transfer or an entire group.</p><div class="fleet-tabs" role="tablist" aria-label="Fleet categories"><button class="fleet-tab active" data-fleet="sedan" role="tab" aria-selected="true">Premium sedan</button><button class="fleet-tab" data-fleet="suv" role="tab" aria-selected="false">Luxury SUV</button><button class="fleet-tab" data-fleet="sprinter" role="tab" aria-selected="false">Executive van</button><button class="fleet-tab" data-fleet="coach" role="tab" aria-selected="false">Motor coach</button></div><a class="button button-dark-outline" href="#contact">Request a vehicle</a></div>
+      <div class="fleet-visual reveal"><div class="fleet-photo-wrap"><img id="fleet-photo" src="assets/hero-electric.webp" alt="Premium sedan"><span class="fleet-gradient"></span><div class="fleet-label"><span id="fleet-type">Premium sedan</span><strong id="fleet-passengers">1–3 passengers</strong></div></div><div class="fleet-details"><div><span>Best for</span><strong id="fleet-use">Airport & business travel</strong></div><div><span>Experience</span><strong id="fleet-feature">Quiet, polished, connected</strong></div></div></div>
+    </section>
+
+    <section class="app-section"><div class="app-copy reveal"><p class="eyebrow dark">RMA on the go</p><h2>Three steps.<br>One smooth ride.</h2><p>Plan transportation, review trip details, access receipts, and stay connected with your chauffeur from one simple experience.</p><a class="button" href="#contact">Create a profile</a></div><div class="app-steps"><article class="reveal"><span>01</span><div><h3>Book</h3><p>Choose your trip details and vehicle.</p></div></article><article class="reveal"><span>02</span><div><h3>Track</h3><p>See chauffeur and vehicle information.</p></div></article><article class="reveal"><span>03</span><div><h3>Ride</h3><p>Arrive comfortably and on schedule.</p></div></article></div></section>
+
+    <section class="global-section" id="locations"><div class="global-map" aria-hidden="true"><div class="map-ring ring-one"></div><div class="map-ring ring-two"></div><span class="map-dot dot-one"></span><span class="map-dot dot-two"></span><span class="map-dot dot-three"></span><span class="map-dot dot-four"></span><span class="map-dot dot-five"></span></div><div class="global-copy reveal"><p class="eyebrow">Global reach. Local care.</p><h2>Your next ride is already within reach.</h2><p>Company operations and a selected partner network make it possible to coordinate transportation across the United States and major international destinations.</p><a class="button" href="#contact">Find your city</a></div></section>
+
+    <section class="contact-panel" id="contact">
       <div class="contact-panel-overlay"></div>
-      <div class="contact-intro reveal">
-        <p class="contact-kicker">Serving</p>
-        <h2><span>Every city.</span><strong>Everywhere.</strong></h2>
-        <div class="contact-intro-bottom">
-          <a class="button contact-login" href="#">Login</a>
-          <div class="call-block">
-            <span>Or give us a call:</span>
-            <a href="tel:8888885466">888-888-LIMO</a>
-            <a href="tel:3016547433">301-654-RIDE</a>
-          </div>
-        </div>
-      </div>
-
-      <form class="contact-form reveal" id="booking-form">
-        <h2>Send us a message!</h2>
-        <div class="contact-fields two-columns">
-          <label><span>First name</span><input type="text" name="first_name" required></label>
-          <label><span>Last name</span><input type="text" name="last_name" required></label>
-          <label><span>Email</span><input type="email" name="email" required></label>
-          <label><span>Phone</span><input type="tel" name="phone"></label>
-        </div>
-        <label class="select-field"><span>State</span><select name="state" required><option value="">Select your state</option><option>Maryland</option><option>Virginia</option><option>Washington, D.C.</option><option>New York</option><option>Other</option></select></label>
-        <label class="select-field"><span>Travel frequency</span><select name="frequency"><option value="">How often do you need chauffeured transportation?</option><option>Once</option><option>A few times a year</option><option>Monthly</option><option>Weekly</option></select></label>
-        <fieldset class="request-options">
-          <legend>How can we help?</legend>
-          <label><input type="checkbox" name="request" value="reservation"><span>Make a reservation</span></label>
-          <label><input type="checkbox" name="request" value="estimate"><span>Request an estimate</span></label>
-          <label><input type="checkbox" name="request" value="event"><span>Book an event</span></label>
-          <label><input type="checkbox" name="request" value="wedding"><span>Book a wedding</span></label>
-          <label><input type="checkbox" name="request" value="corporate"><span>Open a corporate account</span></label>
-          <label><input type="checkbox" name="request" value="affiliate"><span>Join the affiliate network</span></label>
-        </fieldset>
-        <label class="message-field"><span>Message</span><textarea name="message" rows="4" required></textarea></label>
-        <button class="button contact-submit" type="submit">Send message</button>
-        <p class="booking-note" id="booking-note" role="status"></p>
-      </form>
-    </section>
-
-    <section class="section services" id="services">
-      <div class="section-heading reveal">
-        <div><p class="eyebrow dark">Travel, tailored</p><h2>One standard.<br>Every kind of journey.</h2></div>
-        <p>From a single airport pickup to transportation for an entire organization, RMA makes every mile feel effortless.</p>
-      </div>
-      <div class="service-grid">
-        <article class="service-card service-featured reveal">
-          <div class="service-number">01</div>
-          <div class="service-art airport-art" aria-hidden="true"><span></span></div>
-          <div class="service-copy"><h3>Airport transfers</h3><p>Timely pickups, flight monitoring, and professional meet-and-greet service.</p><a href="#reserve">Plan an airport ride →</a></div>
-        </article>
-        <article class="service-card reveal">
-          <div class="service-number">02</div>
-          <div class="service-art corporate-art" aria-hidden="true"><span></span></div>
-          <div class="service-copy"><h3>Corporate travel</h3><p>Dependable executive transportation with centralized account support.</p><a href="#reserve">Explore corporate travel →</a></div>
-        </article>
-        <article class="service-card reveal">
-          <div class="service-number">03</div>
-          <div class="service-art event-art" aria-hidden="true"><span></span></div>
-          <div class="service-copy"><h3>Events & groups</h3><p>Coordinated movement for weddings, conferences, teams, and celebrations.</p><a href="#reserve">Plan group transportation →</a></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section fleet" id="fleet">
-      <div class="fleet-copy reveal">
-        <p class="eyebrow">A vehicle for every itinerary</p>
-        <h2>Meet the fleet.</h2>
-        <p>From discreet executive travel to large-group movement, every vehicle is selected for comfort, presentation, and reliability.</p>
-        <div class="fleet-tabs" role="tablist" aria-label="Fleet categories">
-          <button class="fleet-tab active" data-fleet="sedan" role="tab">Premium sedan</button>
-          <button class="fleet-tab" data-fleet="suv" role="tab">Luxury SUV</button>
-          <button class="fleet-tab" data-fleet="sprinter" role="tab">Executive van</button>
-          <button class="fleet-tab" data-fleet="coach" role="tab">Motor coach</button>
-        </div>
-        <a class="button button-outline" href="#reserve">Explore the full fleet</a>
-      </div>
-      <div class="fleet-visual reveal">
-        <div class="vehicle-stage sedan" id="vehicle-stage" aria-label="Stylized premium vehicle illustration">
-          <div class="vehicle-glow"></div>
-          <div class="vehicle">
-            <div class="vehicle-roof"></div><div class="vehicle-body"></div>
-            <span class="wheel wheel-left"></span><span class="wheel wheel-right"></span>
-          </div>
-        </div>
-        <div class="fleet-details">
-          <div><span>Passengers</span><strong id="fleet-passengers">1–3</strong></div>
-          <div><span>Best for</span><strong id="fleet-use">Airport & business</strong></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section difference" id="difference">
-      <div class="difference-heading reveal">
-        <p class="eyebrow dark">The RMA difference</p>
-        <h2>Service you notice.<br>Details you don’t have to.</h2>
-      </div>
-      <div class="difference-grid">
-        <article class="reveal"><span>01</span><h3>Always within reach</h3><p>Live operations support keeps your journey moving around the clock.</p></article>
-        <article class="reveal"><span>02</span><h3>Professionally driven</h3><p>Screened, trained chauffeurs who understand discretion and hospitality.</p></article>
-        <article class="reveal"><span>03</span><h3>Built around you</h3><p>Flexible planning for individual travelers, teams, and complex itineraries.</p></article>
-        <article class="reveal"><span>04</span><h3>One global standard</h3><p>Consistent service through RMA operations and a vetted affiliate network.</p></article>
-      </div>
-    </section>
-
-    <section class="global-section" id="locations">
-      <div class="global-map" aria-hidden="true">
-        <div class="map-ring ring-one"></div><div class="map-ring ring-two"></div>
-        <span class="map-dot dot-one"></span><span class="map-dot dot-two"></span><span class="map-dot dot-three"></span><span class="map-dot dot-four"></span><span class="map-dot dot-five"></span>
-      </div>
-      <div class="global-copy reveal">
-        <p class="eyebrow">Global reach. Local care.</p>
-        <h2>Your next ride is already within reach.</h2>
-        <p>RMA coordinates chauffeured transportation across major markets worldwide through company operations and a carefully selected partner network.</p>
-        <a class="button" href="#reserve">Find your city</a>
-      </div>
-    </section>
-
-    <section class="final-cta">
-      <p class="eyebrow dark">Ready when you are</p>
-      <h2>Make the journey<br>part of the experience.</h2>
-      <a class="button" href="#reserve">Book your ride</a>
+      <div class="contact-intro reveal"><p class="contact-kicker">Serving</p><h2><span>Every city.</span><strong>Everywhere.</strong></h2><div class="contact-intro-bottom"><a class="button contact-login" href="#">Login</a><div class="call-block"><span>Or give us a call:</span><a href="tel:8888885466">888-888-LIMO</a><a href="tel:3016547433">301-654-RIDE</a></div></div></div>
+      <form class="contact-form reveal" id="contact-form"><h2>Send us a message!</h2><div class="contact-fields two-columns"><label><span>First name</span><input type="text" name="first_name" required></label><label><span>Last name</span><input type="text" name="last_name" required></label><label><span>Email</span><input type="email" name="email" required></label><label><span>Phone</span><input type="tel" name="phone"></label></div><label class="select-field"><span>State</span><select name="state" required><option value="">Select your state</option><option>Maryland</option><option>Virginia</option><option>Washington, D.C.</option><option>New York</option><option>Other</option></select></label><label class="select-field"><span>Travel frequency</span><select name="frequency"><option value="">How often do you need chauffeured transportation?</option><option>Once</option><option>A few times a year</option><option>Monthly</option><option>Weekly</option></select></label><fieldset class="request-options"><legend>How can we help?</legend><label><input type="checkbox" name="request" value="reservation"><span>Make a reservation</span></label><label><input type="checkbox" name="request" value="estimate"><span>Request an estimate</span></label><label><input type="checkbox" name="request" value="event"><span>Book an event</span></label><label><input type="checkbox" name="request" value="corporate"><span>Open a corporate account</span></label><label><input type="checkbox" name="request" value="affiliate"><span>Join the affiliate network</span></label><label><input type="checkbox" name="request" value="feedback"><span>Provide feedback</span></label></fieldset><label class="message-field"><span>Message</span><textarea name="message" rows="4" required></textarea></label><button class="button contact-submit" type="submit">Send message</button><p class="form-note" id="form-note" role="status"></p></form>
     </section>
   </main>
 
-  <footer>
-    <div class="footer-top">
-      <a class="brand footer-logo" href="#top"><img class="official-logo" src="assets/rma-logo.png" alt="RMA Worldwide"></a>
-      <div class="footer-links"><a href="#services">Services</a><a href="#fleet">Fleet</a><a href="#locations">Locations</a><a href="#difference">About RMA</a></div>
-      <div class="footer-contact"><span>Reservations & support</span><a href="tel:8888885466">(888) 888-LIMO</a></div>
-    </div>
-    <div class="footer-bottom"><span>Concept design for RMA Worldwide</span><span>Created by Webrella Studio</span></div>
-  </footer>
-
+  <footer><div class="footer-cta"><div><p class="eyebrow">Ready when you are</p><h2>Make the journey part of the experience.</h2></div><a class="button" href="#contact">Book your ride</a></div><div class="footer-grid"><div class="footer-brand"><a href="#top"><img src="assets/rma-logo.png" alt="RMA Worldwide"></a><p>Premium chauffeured transportation for individuals, organizations, and groups worldwide.</p></div><div class="footer-column"><h3>Explore</h3><a href="#services">Services</a><a href="#fleet">Fleet</a><a href="#difference">Why RMA</a></div><div class="footer-column"><h3>Plan</h3><a href="#contact">Book a ride</a><a href="#contact">Request an estimate</a><a href="#contact">Corporate account</a></div><div class="footer-column footer-support"><h3>Reservations & support</h3><a href="tel:8888885466">(888) 888-LIMO</a><span>Available 24/7</span></div></div><div class="footer-bottom"><span>Concept design for RMA Worldwide</span><span>Created by Webrella Studio</span></div></footer>
   <script src="script.js"></script>
 </body>
 </html>
