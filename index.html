@@ -9,6 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .utility-bar::after { animation: none; transform: none; }
+    .utility-marquee { overflow: visible; -webkit-mask-image: none; mask-image: none; }
+    .utility-track { width: 100%; justify-content: center; animation: none; }
+    .utility-links { padding-right: 0; justify-content: center; }
+    .utility-links[aria-hidden="true"] { display: none; }
+  </style>
 </head>
 <body>
   <div class="utility-bar" aria-label="Quick actions and reservations">
@@ -16,7 +23,6 @@
     <div class="utility-marquee">
       <div class="utility-track">
         <div class="utility-links"><a href="#contact">Login</a><a href="#contact">Sign up</a><a href="#contact">Get a quote</a><a href="#contact">Quick receipt</a><a href="#contact">Invoices</a></div>
-        <div class="utility-links" aria-hidden="true"><a href="#contact" tabindex="-1">Login</a><a href="#contact" tabindex="-1">Sign up</a><a href="#contact" tabindex="-1">Get a quote</a><a href="#contact" tabindex="-1">Quick receipt</a><a href="#contact" tabindex="-1">Invoices</a></div>
       </div>
     </div>
     <a class="utility-phone" href="tel:8888885466"><span>Reservations</span>(888) 888-LIMO</a>
