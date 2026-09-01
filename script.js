@@ -203,3 +203,8 @@ contactForm?.addEventListener('submit', event => {
     formNote.textContent = 'Mockup complete — a live site would securely send this inquiry to the RMA team.';
   }
 });
+
+// Use the transparent official RMA logo everywhere the legacy PNG is referenced.
+document.querySelectorAll('img[src="assets/rma-logo.png"]').forEach(image => {
+  image.src = 'assets/rma-logo.svg';
+});
