@@ -208,3 +208,11 @@ contactForm?.addEventListener('submit', event => {
 document.querySelectorAll('img[src="assets/rma-logo.png"]').forEach(image => {
   image.src = 'assets/rma-logo.svg';
 });
+
+// Load Webrella's interactive concept layer after the core site is ready.
+if (!document.querySelector('script[data-webrella-innovation]')) {
+  const innovationLayer = document.createElement('script');
+  innovationLayer.src = 'innovation.js?v=20260901';
+  innovationLayer.dataset.webrellaInnovation = 'true';
+  document.body.appendChild(innovationLayer);
+}
